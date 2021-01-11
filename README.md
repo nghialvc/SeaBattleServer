@@ -1,2 +1,2 @@
-# SeaBattleServer
-Server of Seabattle Game
+# django_local_library
+Local Library website written in Django

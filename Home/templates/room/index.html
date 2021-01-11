@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block body%}
+<h1>Welcome to the battle</h1>
+<p id='turn'>{{room.turn}}</p>
+<p id='player1'>{{room.player1.username}}</p>
+<p id='move1'>{{room.move1}}</p>
+<p id='map1'>{{room.map1}}</p>
+<p id='player2'>{{room.player2.username}}</p>
+<p id='move2'>{{room.move2}}</p>
+<p id='map2'>{{room.map2}}</p>
+<p id='result'>{{room.result}}</p>
+{%endblock%}
