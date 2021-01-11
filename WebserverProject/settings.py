@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '4$i-v89x!4lk4-!22p7w%1f#f9gocj
 # DEBUG = False
 os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['mighty-harbor-22886.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['http://seabattleserver1408.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
