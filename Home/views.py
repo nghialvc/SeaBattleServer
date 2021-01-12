@@ -13,10 +13,10 @@ def loginview(request):
         user = authenticate(request,username=request.POST['username'],password=request.POST['password'])
         if user is not None:
             login(request, user)
-            return redirect('/home/')
+            return render(request,'home/login.html',{'form':form,'error':'','username':user.username})
         else:
-            return render(request,'home/login.html',{'form':form,'error':'Your username or password is incorrect!'})
-    return render(request,'home/login.html',{'form':form,'error':''})
+            return render(request,'home/login.html',{'form':form,'error':'Your username or password is incorrect!','username':''})
+    return render(request,'home/login.html',{'form':form,'error':'','username':''})
 
 def registerview(request):
     form = RegisterForm()
