@@ -19,7 +19,7 @@ def post(room, player, move, result, turn, playermap, status):
         room.status = status
     return room
 
-def createRoom(ports):
+def createRoom(ports, user):
     r = Room()
     r.port = ports
     r.player1=user
@@ -58,7 +58,7 @@ def wait(request, ports):
         room = Room.objects.get(port=ports)
         if room.status == 'Closed':
             room.delete()
-            r = createRoom(ports)
+            r = createRoom(ports, user)
             return render(request,'room/wait.html',{'player1':r.player1.id,'player2':r.player2.id,'playername1':r.player1.username,'playername2':r.player2.username})
 
         #when player refresh
@@ -75,5 +75,5 @@ def wait(request, ports):
             return render(request,'room/wait.html',{'player1':room.player1.id,'player2':room.player2.id,'playername1':room.player1.username,'playername2':room.player2.username})
     #create new room
     except:
-        r = createRoom(ports)
+        r = createRoom(ports, user)
         return render(request,'room/wait.html',{'player1':r.player1.id,'player2':r.player2.id,'playername1':r.player1.username,'playername2':r.player2.username})
