@@ -12,7 +12,7 @@ class Room(models.Model):
     map1 = models.CharField(default='', max_length=200)
     map2 = models.CharField(default='', max_length=200)
     result = models.IntegerField(default=0)
-    status = models.CharField(default='Enable', max_length=200)
+    status = models.CharField(default='Enable', max_length=200, null=True)
 
     def __str__(self):
         return "player "+str(self.player1.id)+" player"+str(self.player2.id) 
